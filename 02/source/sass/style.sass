@@ -1,0 +1,117 @@
+$colorGray: #F0F0F0
+$colorVeryDarkGray: #212f0b
+$colorDarkGray: #293B29
+$colorGreen: #3d5a45
+$colorLightGreen: #b1ff00
+
+$colorOrange: #ff7600
+
+
+
+@mixin size($width, $height: $width)
+  width: $width
+  height: $height
+  
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+
+body, h1, h2, h3, h4, h5, h6, p 
+  margin: 0
+  padding: 0
+
+html
+  font-family: 微軟正黑體
+
+
+body
+  height: 100vh
+  background-color: $colorDarkGray
+  +flexCenter
+  .clockBody
+    +size(350px)
+    background-color: $colorGreen
+    border-radius: 80px
+    box-shadow: 0 0 100px rgba(black,0.5)
+    +flexCenter
+    .clockFace
+      +size(300px)
+      position: relative
+      border-radius: 50%
+      background-color: $colorDarkGray
+      border: 3px solid $colorVeryDarkGray
+      .line, .point
+        position: absolute
+        left: 50%
+      .line
+        top: 20px
+        +size(2px, 24px)
+        background-color: $colorOrange
+        transform-origin: center 130px
+      .point
+        +size(2px)
+        top: 30px
+        border-radius: 50%
+        background-color: white
+        transform-origin: center 120px
+      .amNum, .pmNum
+        position: absolute
+        left: 50%
+        font-size: 12px
+        color: white
+        user-select: none
+        span
+          display: block
+          position: relative
+      .amNum
+        top: 0px
+        transform-origin: center 150px
+      .pmNum
+        top: 45px
+        transform-origin: center 105px
+      .minHandler, .hrHandler, .secHandler
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translateX(-50%)
+        z-index: 1
+        &:after, &:before
+          content: ""
+          position: absolute
+          left: 50%
+          transform: translateX(-50%)
+      .minHandler
+        width: 8px
+        height: 85px
+        background-color: $colorOrange
+        border-radius: 10px
+        transform-origin: center 2px
+        &:after, &:before
+          width: 1px
+          height: 40%
+          top: 2.5px
+          background-color: white
+        &:before
+          +size(5px)
+          border-radius: 50%
+      .hrHandler
+        +size(8px, 50px)
+        background-color: white
+        transform-origin: center 2px
+        border-radius: 10px 10px 0 0
+        &:after
+          +size(1px, 40%)
+          top: 5px
+          background-color: $colorDarkGray
+      .secHandler
+        +size(12px, 120px)
+        background-color: $colorLightGreen
+        clip-path: polygon(45% 0%, 55% 0%, 55% 33%,  10% 41.25%, 100% 57.5%, 55% 66%, 55% 100%, 45% 100%, 45% 66%, 90% 57.75%, 0% 41.25%, 45% 33%)
+        transform-origin: center 0
+        &:after
+          +size(5px)
+          border-radius: 50%
+          background-color: $colorLightGreen
+

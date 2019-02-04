@@ -1,0 +1,100 @@
+$colorBlue: #062145
+$colorDarkBlue: #041936
+$colorLightBlue: #00C4FF
+$colorGray: #e8e8e8
+
+@mixin size($width, $height: $width)
+  width: $width
+  height: $height
+  
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+
+@mixin Scrollbar
+  &::-webkit-scrollbar
+    background-color: transparent
+    height: 5px
+  &::-webkit-scrollbar-thumb
+    height: 5px
+    background-color: rgba($colorLightBlue,0.5)
+    border-radius: 50px
+  &::-webkit-scrollbar-track
+    background-color: rgba($colorLightBlue,0.2)
+
+
+body, h1, h2, h3, h4, h5, h6, p 
+  margin: 0
+  padding: 0
+
+html
+  font-family: 微軟正黑體
+
+body 
+  +flexCenter
+  min-height: 100vh
+  background-color: $colorGray
+
+.calcBody
+  +size(350px, 525px)
+  margin: 0 auto
+  background-color: $colorBlue
+  border-radius: 20px
+  color: white
+  overflow: hidden
+  box-shadow: 0 0 10px rgba(black,0.5)
+  .calcResult
+    height: 120px
+    background-color: $colorDarkBlue
+    padding: 20px
+    text-align: right
+    box-sizing: border-box
+    .fun
+      font-size: 16px
+      color: $colorLightBlue
+      height: 20px
+    .ans
+      width: 100%
+      font-size: 56px
+      overflow-x: auto
+      -webkit-overflow-style: none
+      +Scrollbar
+  .calcInput
+    +flexCenter
+    padding: 10px
+    height: 405px
+    box-sizing: border-box
+    .calcBtn
+      flex-basis: 70px
+      flex-grow: 1
+      flex-shrink: 0
+      font-size: 24px
+      margin: 3px
+      height: 62px
+      user-select: none
+      cursor: pointer
+      box-sizing: border-box
+      +flexCenter
+      &.ope
+        padding: 10px
+        background-color: $colorDarkBlue
+        border-radius: 16px
+      &.ac, &.del
+        color: $colorLightBlue
+      &.equal
+        background-image: linear-gradient(to right, #00c4ff , #6c00ff)
+        flex-basis: 100px
+        flex-grow: 2
+        border-radius: 16px
+        overflow: hidden
+        display: block
+        text-align: right
+        padding-top: 14px
+        padding-right: 30px
+
+
+
+
+      

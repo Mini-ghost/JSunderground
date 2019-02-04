@@ -1,0 +1,148 @@
+@charset "UTF-8";
+body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-family: 微軟正黑體; }
+
+body {
+  height: 100vh;
+  background-color: #293B29;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  body .clockBody {
+    width: 350px;
+    height: 350px;
+    background-color: #3d5a45;
+    border-radius: 80px;
+    -webkit-box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    body .clockBody .clockFace {
+      width: 300px;
+      height: 300px;
+      position: relative;
+      border-radius: 50%;
+      background-color: #293B29;
+      border: 3px solid #212f0b; }
+      body .clockBody .clockFace .line, body .clockBody .clockFace .point {
+        position: absolute;
+        left: 50%; }
+      body .clockBody .clockFace .line {
+        top: 20px;
+        width: 2px;
+        height: 24px;
+        background-color: #ff7600;
+        -webkit-transform-origin: center 130px;
+            -ms-transform-origin: center 130px;
+                transform-origin: center 130px; }
+      body .clockBody .clockFace .point {
+        width: 2px;
+        height: 2px;
+        top: 30px;
+        border-radius: 50%;
+        background-color: white;
+        -webkit-transform-origin: center 120px;
+            -ms-transform-origin: center 120px;
+                transform-origin: center 120px; }
+      body .clockBody .clockFace .amNum, body .clockBody .clockFace .pmNum {
+        position: absolute;
+        left: 50%;
+        font-size: 12px;
+        color: white;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none; }
+        body .clockBody .clockFace .amNum span, body .clockBody .clockFace .pmNum span {
+          display: block;
+          position: relative; }
+      body .clockBody .clockFace .amNum {
+        top: 0px;
+        -webkit-transform-origin: center 150px;
+            -ms-transform-origin: center 150px;
+                transform-origin: center 150px; }
+      body .clockBody .clockFace .pmNum {
+        top: 45px;
+        -webkit-transform-origin: center 105px;
+            -ms-transform-origin: center 105px;
+                transform-origin: center 105px; }
+      body .clockBody .clockFace .minHandler, body .clockBody .clockFace .hrHandler, body .clockBody .clockFace .secHandler {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+        z-index: 1; }
+        body .clockBody .clockFace .minHandler:after, body .clockBody .clockFace .minHandler:before, body .clockBody .clockFace .hrHandler:after, body .clockBody .clockFace .hrHandler:before, body .clockBody .clockFace .secHandler:after, body .clockBody .clockFace .secHandler:before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+              -ms-transform: translateX(-50%);
+                  transform: translateX(-50%); }
+      body .clockBody .clockFace .minHandler {
+        width: 8px;
+        height: 85px;
+        background-color: #ff7600;
+        border-radius: 10px;
+        -webkit-transform-origin: center 2px;
+            -ms-transform-origin: center 2px;
+                transform-origin: center 2px; }
+        body .clockBody .clockFace .minHandler:after, body .clockBody .clockFace .minHandler:before {
+          width: 1px;
+          height: 40%;
+          top: 2.5px;
+          background-color: white; }
+        body .clockBody .clockFace .minHandler:before {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%; }
+      body .clockBody .clockFace .hrHandler {
+        width: 8px;
+        height: 50px;
+        background-color: white;
+        -webkit-transform-origin: center 2px;
+            -ms-transform-origin: center 2px;
+                transform-origin: center 2px;
+        border-radius: 10px 10px 0 0; }
+        body .clockBody .clockFace .hrHandler:after {
+          width: 1px;
+          height: 40%;
+          top: 5px;
+          background-color: #293B29; }
+      body .clockBody .clockFace .secHandler {
+        width: 12px;
+        height: 120px;
+        background-color: #b1ff00;
+        -webkit-clip-path: polygon(45% 0%, 55% 0%, 55% 33%, 10% 41.25%, 100% 57.5%, 55% 66%, 55% 100%, 45% 100%, 45% 66%, 90% 57.75%, 0% 41.25%, 45% 33%);
+                clip-path: polygon(45% 0%, 55% 0%, 55% 33%, 10% 41.25%, 100% 57.5%, 55% 66%, 55% 100%, 45% 100%, 45% 66%, 90% 57.75%, 0% 41.25%, 45% 33%);
+        -webkit-transform-origin: center 0;
+            -ms-transform-origin: center 0;
+                transform-origin: center 0; }
+        body .clockBody .clockFace .secHandler:after {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: #b1ff00; }

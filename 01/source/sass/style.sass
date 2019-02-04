@@ -1,0 +1,109 @@
+$colorGray: #F0F0F0
+$colorDarkGray: #DBDBDB
+$colorGreen: #2EB738
+
+$maxWidth: 1280px
+
+@mixin Size($width, $height: $width)
+  width: $width
+  height: $height
+  
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+
+body, h1, h2, h3, h4, h5, h6, p 
+  margin: 0
+  padding: 0
+
+html
+  font-family: 微軟正黑體
+
+
+body
+  background-color: $colorGray
+  color: $colorGreen
+  user-select: none
+  .multiplyBox
+    width: 100%
+    max-width: $maxWidth
+    padding: 50px 0
+    margin: 0 auto
+    +flexCenter
+    justify-content: space-around 
+    .multiplyTitle, .multiplyItem
+      flex-grow: 1
+      flex-shrink: 1
+      flex-basis: calc(33.3% - 60px)
+      height: 366px
+      margin: 15px
+      padding: 10px
+      @media(max-width: $maxWidth)
+        flex-basis: calc(50% - 20px)
+      @media(max-width: 768px)
+        flex-basis: 100%
+
+    .multiplyTitle
+      +flexCenter
+      .title
+        font-size: 48px
+        font-weight: blod
+      .subTitle
+        font-size: 20px
+        font-weight: normal
+      .hr
+        position: relative
+        width: 90%
+        height: 1px
+        background-color: $colorGreen
+        &:before, &:after
+          content: "✖"
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          font-size: 12px
+          font-weight: bold
+        &:before
+          left: -15px
+        &:after
+          right: -15px
+  .multiplyItem
+    background-color: white
+    border-radius: 100px 0  30px 0
+    box-shadow: 0 3px 10px $colorDarkGray
+    overflow: hidden
+    +flexCenter
+    &:hover
+      box-shadow: 0 3px 10px rgba(black, 0.2)
+    .itemBox
+      flex-basis: 70%
+      flex-grow: 0
+      flex-shrink: 1
+      column-count: 2 
+      column-gap: 20px
+      column-fill: balance
+      @media(max-width: $maxWidth)
+        flex-basis: auto
+      h2
+        width: 100%
+        font-family: Arial
+        font-size: 96px
+        text-align: center
+        text-shadow: 4px 4px 0 $colorDarkGray
+      .listItem
+        width: 100%
+        font-size: 25px
+        margin: 5px auto
+
+  footer
+    background-color: $colorGreen
+    color: white
+    .content
+      padding: 5px 0
+      max-width: $maxWidth
+      margin: 0 auto
+      font-size: 16px
+      text-align: right
+    

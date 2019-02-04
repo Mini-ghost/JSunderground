@@ -1,0 +1,145 @@
+@charset "UTF-8";
+body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-family: 微軟正黑體; }
+
+body {
+  background-color: #F0F0F0;
+  color: #2EB738;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  body .multiplyBox {
+    width: 100%;
+    max-width: 1280px;
+    padding: 50px 0;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+    body .multiplyBox .multiplyTitle, body .multiplyBox .multiplyItem {
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+      -ms-flex-preferred-size: calc(33.3% - 60px);
+          flex-basis: calc(33.3% - 60px);
+      height: 366px;
+      margin: 15px;
+      padding: 10px; }
+      @media (max-width: 1280px) {
+        body .multiplyBox .multiplyTitle, body .multiplyBox .multiplyItem {
+          -ms-flex-preferred-size: calc(50% - 20px);
+              flex-basis: calc(50% - 20px); } }
+      @media (max-width: 768px) {
+        body .multiplyBox .multiplyTitle, body .multiplyBox .multiplyItem {
+          -ms-flex-preferred-size: 100%;
+              flex-basis: 100%; } }
+    body .multiplyBox .multiplyTitle {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      body .multiplyBox .multiplyTitle .title {
+        font-size: 48px;
+        font-weight: blod; }
+      body .multiplyBox .multiplyTitle .subTitle {
+        font-size: 20px;
+        font-weight: normal; }
+      body .multiplyBox .multiplyTitle .hr {
+        position: relative;
+        width: 90%;
+        height: 1px;
+        background-color: #2EB738; }
+        body .multiplyBox .multiplyTitle .hr:before, body .multiplyBox .multiplyTitle .hr:after {
+          content: "✖";
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+                  transform: translateY(-50%);
+          font-size: 12px;
+          font-weight: bold; }
+        body .multiplyBox .multiplyTitle .hr:before {
+          left: -15px; }
+        body .multiplyBox .multiplyTitle .hr:after {
+          right: -15px; }
+  body .multiplyItem {
+    background-color: white;
+    border-radius: 100px 0  30px 0;
+    -webkit-box-shadow: 0 3px 10px #DBDBDB;
+            box-shadow: 0 3px 10px #DBDBDB;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    body .multiplyItem:hover {
+      -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+              box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); }
+    body .multiplyItem .itemBox {
+      -ms-flex-preferred-size: 70%;
+          flex-basis: 70%;
+      -webkit-box-flex: 0;
+          -ms-flex-positive: 0;
+              flex-grow: 0;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+      -webkit-column-count: 2;
+              column-count: 2;
+      -webkit-column-gap: 20px;
+              column-gap: 20px;
+      -webkit-column-fill: balance;
+              column-fill: balance; }
+      @media (max-width: 1280px) {
+        body .multiplyItem .itemBox {
+          -ms-flex-preferred-size: auto;
+              flex-basis: auto; } }
+      body .multiplyItem .itemBox h2 {
+        width: 100%;
+        font-family: Arial;
+        font-size: 96px;
+        text-align: center;
+        text-shadow: 4px 4px 0 #DBDBDB; }
+      body .multiplyItem .itemBox .listItem {
+        width: 100%;
+        font-size: 25px;
+        margin: 5px auto; }
+  body footer {
+    background-color: #2EB738;
+    color: white; }
+    body footer .content {
+      padding: 5px 0;
+      max-width: 1280px;
+      margin: 0 auto;
+      font-size: 16px;
+      text-align: right; }
