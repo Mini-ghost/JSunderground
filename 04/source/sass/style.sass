@@ -1,0 +1,61 @@
+$colorBlue: #062145
+$colorDarkBlue: #041936
+$colorLightBlue: #00C4FF
+$colorGray: #e8e8e8
+
+@mixin size($width, $height: $width)
+  width: $width
+  height: $height
+  
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+
+
+body, h1, h2, h3, h4, h5, h6, p 
+  margin: 0
+  padding: 0
+
+
+body 
+  font-family: 'Open Sans', sans-serif
+  +flexCenter
+  flex-direction: column
+  min-height: 100vh
+  background-color: $colorGray
+  user-select: none
+  .title
+    font-size: 70px
+    font-weight: bold
+    width: 540px
+    padding: 10px 0
+    border-top: 5px solid black
+    border-bottom: 5px solid black
+  .timeBox
+    width: 540px
+    background-color: white
+    border: 2px solid black
+    margin-top: 10px
+    .countryBox
+      border-top: 2px solid black
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 10px
+      &:first-child
+        border: none
+      &.pm
+        background-color: black
+        color: white
+    .countryName
+      font-weight: bold
+      font-size: 36px
+    .countryTime
+      font-weight: bold
+      font-size: 72px
+    .countryDate
+      font-style: italic
+
+

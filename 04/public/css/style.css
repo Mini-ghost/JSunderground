@@ -1,0 +1,64 @@
+body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  background-color: #e8e8e8;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  body .title {
+    font-size: 70px;
+    font-weight: bold;
+    width: 540px;
+    padding: 10px 0;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black; }
+  body .timeBox {
+    width: 540px;
+    background-color: white;
+    border: 2px solid black;
+    margin-top: 10px; }
+    body .timeBox .countryBox {
+      border-top: 2px solid black;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      padding: 10px; }
+      body .timeBox .countryBox:first-child {
+        border: none; }
+      body .timeBox .countryBox.pm {
+        background-color: black;
+        color: white; }
+    body .timeBox .countryName {
+      font-weight: bold;
+      font-size: 36px; }
+    body .timeBox .countryTime {
+      font-weight: bold;
+      font-size: 72px; }
+    body .timeBox .countryDate {
+      font-style: italic; }
