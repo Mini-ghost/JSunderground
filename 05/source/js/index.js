@@ -3,7 +3,7 @@
   'use strict';
 
   var rangeApi = 'json/airRange.json'
-  var airApi = 'http://opendata2.epa.gov.tw/AQI.json'
+  var airApi = 'https://script.google.com/macros/s/AKfycbxe3Ba-MiNT5T_mHhW-mf5IixAk2xScNjX74766jThzC3sMAc0/exec?url=http://opendata2.epa.gov.tw/AQI.json'
   var pollutionApi = 'json/airPollution.json'
 
   var xhrAirRange = new XMLHttpRequest()
