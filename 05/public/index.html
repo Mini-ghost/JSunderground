@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>5F - 全台空氣指標儀表板｜JavaScrip 新手地下城</title>
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body>
+    <header>
+      <div class="infoBox"> 
+        <div class="titleBox">
+          <h1>空氣品質指標 (AQI)</h1>
+          <div class="county"> 
+            <div class="text"></div>
+            <ul class="countySelect hide"></ul>
+          </div>
+        </div>
+        <ul class="airRangeBox"></ul>
+      </div>
+    </header>
+    <main>
+      <section class="separate">
+        <div class="nowCounty"></div>
+        <div class="updateTime"></div>
+      </section>
+      <section id="dataBox">
+        <div class="detailBox">
+          <ul class="allZoonBox detailType"></ul>
+        </div>
+        <ul class="allZoonBox"></ul>
+      </section>
+    </main>
+    <footer>
+      <div class="content"> <span class="left">資料來源：行政院環境保護署</span><span class="right">Copyright © 2019 HexSchool. All rights reserved.</span></div>
+    </footer>
+    <script src="js/index.js"></script>
+  </body>
+</html>

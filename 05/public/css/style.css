@@ -1,0 +1,345 @@
+@charset "UTF-8";
+body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+body {
+  font-family: 微軟正黑體;
+  background-color: #F0F0F0;
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+header, main, .content {
+  width: 100%;
+  max-width: 1110px;
+  margin: 30px auto; }
+
+header .infoBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  header .infoBox .titleBox {
+    -ms-flex-preferred-size: 350px;
+        flex-basis: 350px; }
+    header .infoBox .titleBox h1 {
+      margin: 10px 0;
+      font-size: 39px;
+      text-align: center; }
+    header .infoBox .titleBox .county {
+      position: relative;
+      cursor: pointer; }
+      header .infoBox .titleBox .county:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: 5px solid black;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid transparent; }
+      header .infoBox .titleBox .county .text {
+        width: 100%;
+        min-width: 350px;
+        background-color: white;
+        padding: 13px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        border: 3px solid black; }
+      header .infoBox .titleBox .county ul.countySelect {
+        position: absolute;
+        top: calc(100% - 3px);
+        left: 0;
+        width: 100%;
+        max-height: 300px;
+        overflow: auto;
+        border: 3px solid black;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        -webkit-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s; }
+        header .infoBox .titleBox .county ul.countySelect::-webkit-scrollbar {
+          background-color: transparent;
+          width: 8px; }
+        header .infoBox .titleBox .county ul.countySelect::-webkit-scrollbar-thumb {
+          width: 8px;
+          background-color: #FFAF6A;
+          border-radius: 50px; }
+        header .infoBox .titleBox .county ul.countySelect::-webkit-scrollbar-track {
+          background-color: white; }
+        header .infoBox .titleBox .county ul.countySelect.hide {
+          visibility: hidden;
+          max-height: 0px; }
+        header .infoBox .titleBox .county ul.countySelect li.option {
+          padding: 13px;
+          background-color: white; }
+          header .infoBox .titleBox .county ul.countySelect li.option:hover {
+            background-color: #F0F0F0; }
+  header .infoBox ul.airRangeBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    header .infoBox ul.airRangeBox li {
+      text-align: center;
+      width: 120px;
+      border: 3px solid black;
+      margin-right: -3px; }
+      header .infoBox ul.airRangeBox li .airRangeNum, header .infoBox ul.airRangeBox li .airRangeText {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        height: 55px;
+        padding: 0 15px; }
+      header .infoBox ul.airRangeBox li .airRangeNum {
+        border-bottom: 3px solid black; }
+        header .infoBox ul.airRangeBox li .airRangeNum.good {
+          background-color: #95F084; }
+        header .infoBox ul.airRangeBox li .airRangeNum.moderate {
+          background-color: #FFE695; }
+        header .infoBox ul.airRangeBox li .airRangeNum.unhealthyForSensitiveGroups {
+          background-color: #FFAF6A; }
+        header .infoBox ul.airRangeBox li .airRangeNum.unhealthy {
+          background-color: #FF5757; }
+        header .infoBox ul.airRangeBox li .airRangeNum.veryUnhealthy {
+          background-color: #9777FF; }
+        header .infoBox ul.airRangeBox li .airRangeNum.hazardous {
+          background-color: #AD1774; }
+      header .infoBox ul.airRangeBox li .airRangeText {
+        background-color: white; }
+
+main section.separate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  margin: 30px 0; }
+  main section.separate:after {
+    content: "";
+    display: inline-block;
+    border-top: 3px dotted #000;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    margin: 0 10px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; }
+  main section.separate .nowCounty {
+    font-size: 36px;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0; }
+  main section.separate .updateTime {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2; }
+
+main section#dataBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  main section#dataBox .detailBox {
+    -ms-flex-preferred-size: 34%;
+        flex-basis: 34%; }
+    main section#dataBox .detailBox > ul.allZoonBox {
+      max-width: 350px;
+      overflow: hidden; }
+      main section#dataBox .detailBox > ul.allZoonBox li.zoon {
+        margin: 0;
+        margin-top: 12px;
+        cursor: default; }
+      main section#dataBox .detailBox > ul.allZoonBox ul.pollutions {
+        background-color: white;
+        width: 100%;
+        padding: 15px 25px;
+        margin-top: -3px;
+        border: 3px solid #000; }
+        main section#dataBox .detailBox > ul.allZoonBox ul.pollutions li.pollution {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+          padding: 20px 0;
+          border-bottom: 1px solid #000; }
+          main section#dataBox .detailBox > ul.allZoonBox ul.pollutions li.pollution:last-child {
+            border-bottom: none; }
+          main section#dataBox .detailBox > ul.allZoonBox ul.pollutions li.pollution .title .ch {
+            font-size: 24px; }
+          main section#dataBox .detailBox > ul.allZoonBox ul.pollutions li.pollution .title .en, main section#dataBox .detailBox > ul.allZoonBox ul.pollutions li.pollution .title .unit {
+            margin-left: 5px; }
+          main section#dataBox .detailBox > ul.allZoonBox ul.pollutions li.pollution .value {
+            font-size: 24px; }
+  main section#dataBox ul.allZoonBox {
+    -ms-flex-preferred-size: 66%;
+        flex-basis: 66%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    main section#dataBox ul.allZoonBox li.zoon {
+      -ms-flex-preferred-size: 350px;
+          flex-basis: 350px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      height: 95px;
+      margin: 12px 0;
+      border: 3px solid black;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      cursor: pointer; }
+      main section#dataBox ul.allZoonBox li.zoon .zoonName, main section#dataBox ul.allZoonBox li.zoon .zoonAQI {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        height: 100%; }
+      main section#dataBox ul.allZoonBox li.zoon .zoonName {
+        -webkit-box-flex: 0;
+            -ms-flex-positive: 0;
+                flex-grow: 0;
+        -ms-flex-negative: 1;
+            flex-shrink: 1;
+        -ms-flex-preferred-size: 187px;
+            flex-basis: 187px;
+        font-size: 36px;
+        background-color: white;
+        border-right: 3px solid black;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; }
+      main section#dataBox ul.allZoonBox li.zoon .zoonAQI {
+        -webkit-box-flex: 0;
+            -ms-flex-positive: 0;
+                flex-grow: 0;
+        -ms-flex-negative: 1;
+            flex-shrink: 1;
+        -ms-flex-preferred-size: 157px;
+            flex-basis: 157px;
+        font-size: 48px; }
+        main section#dataBox ul.allZoonBox li.zoon .zoonAQI.good {
+          background-color: #95F084; }
+        main section#dataBox ul.allZoonBox li.zoon .zoonAQI.moderate {
+          background-color: #FFE695; }
+        main section#dataBox ul.allZoonBox li.zoon .zoonAQI.unhealthyForSensitiveGroups {
+          background-color: #FFAF6A; }
+        main section#dataBox ul.allZoonBox li.zoon .zoonAQI.unhealthy {
+          background-color: #FF5757; }
+        main section#dataBox ul.allZoonBox li.zoon .zoonAQI.veryUnhealthy {
+          background-color: #9777FF; }
+        main section#dataBox ul.allZoonBox li.zoon .zoonAQI.hazardous {
+          background-color: #AD1774; }
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 10px 0; }
+  footer .content {
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }

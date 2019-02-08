@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+html(lang="zh-TW")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title 5F - 全台空氣指標儀表板｜JavaScrip 新手地下城
+
+    link(rel="stylesheet", href="css/style.css")
+
+  body
+    header
+      .infoBox 
+        .titleBox
+          h1 空氣品質指標 (AQI)
+          .county 
+            .text
+            ul.countySelect.hide
+        ul.airRangeBox
+    main
+      section.separate
+        .nowCounty
+        .updateTime
+      section#dataBox
+        .detailBox
+          ul.allZoonBox.detailType
+        ul.allZoonBox
+    footer
+      .content 
+        span.left 資料來源：行政院環境保護署
+        span.right Copyright © 2019 HexSchool. All rights reserved.
+      
+
+
+
+
+
+
+    script(src="js/index.js")

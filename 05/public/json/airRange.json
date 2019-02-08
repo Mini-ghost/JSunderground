@@ -1,0 +1,38 @@
+[
+  {
+    "text": "良好", 
+    "status": "good",
+    "rangeMax": "50",
+    "rangeMin": "0"
+  },
+  {
+    "text": "普通", 
+    "status": "moderate",
+    "rangeMax": "100",
+    "rangeMin": "51"
+  },
+  {
+    "text": "對敏感族群不健康", 
+    "status": "unhealthyForSensitiveGroups",
+    "rangeMax": "150",
+    "rangeMin": "101"
+  },
+  {
+    "text": "對所有族群不健康", 
+    "status": "unhealthy",
+    "rangeMax": "200",
+    "rangeMin": "151"
+  },
+  {
+    "text": "非常不健康", 
+    "status": "veryUnhealthy",
+    "rangeMax": "300",
+    "rangeMin": "201"
+  },
+  {
+    "text": "危害", 
+    "status": "hazardous",
+    "rangeMax": "400",
+    "rangeMin": "301"
+  }
+]
