@@ -1,9 +1,9 @@
 ;(function(){
   console.time()
   'use strict';
-
+  var googleApp = 'https://script.google.com/macros/s/AKfycbxe3Ba-MiNT5T_mHhW-mf5IixAk2xScNjX74766jThzC3sMAc0/exec?url='
   var rangeApi = 'json/airRange.json'
-  var airApi = 'https://script.google.com/macros/s/AKfycbxe3Ba-MiNT5T_mHhW-mf5IixAk2xScNjX74766jThzC3sMAc0/exec?url=http://opendata2.epa.gov.tw/AQI.json'
+  var airApi = googleApp + 'http://opendata2.epa.gov.tw/AQI.json'
   var pollutionApi = 'json/airPollution.json'
 
   var xhrAirRange = new XMLHttpRequest()
@@ -168,8 +168,15 @@
   }
   xhrAirApi.send()
 
-  countyBtn.addEventListener('click',function(){
+  countyBtn.addEventListener('click',function(e){
     countySelect.classList.toggle('hide')
-  })
+    e.stopPropagation()
+  }, false)
+  
+  document.body.addEventListener('click', function(){
+    if(!countySelect.classList.contains('hide')){ 
+      countySelect.classList.add('hide') 
+    }
+  }, false)
   console.timeEnd()
 })()
