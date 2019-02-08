@@ -26,15 +26,24 @@ body
   min-height: 100vh
   background-color: $colorGray
   user-select: none
+  @media(max-width: 600px)
+    padding: 10px
   .title
     font-size: 70px
     font-weight: bold
-    width: 540px
+    width: 100%
+    max-width: 540px
+    text-align: center
     padding: 10px 0
     border-top: 5px solid black
     border-bottom: 5px solid black
+    @media(max-width: 600px)
+      font-size: 50px
+    @media(max-width: 480px)
+      font-size: 42px
   .timeBox
-    width: 540px
+    width: 100%
+    max-width: 540px
     background-color: white
     border: 2px solid black
     margin-top: 10px
@@ -52,9 +61,13 @@ body
     .countryName
       font-weight: bold
       font-size: 36px
+      @media(max-width: 600px)
+        font-size: 24px
     .countryTime
       font-weight: bold
-      font-size: 72px
+      font-size: 70px
+      @media(max-width: 600px)
+        font-size: 36px
     .countryDate
       font-style: italic
 
