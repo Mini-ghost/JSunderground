@@ -25,15 +25,27 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none; }
+  @media (max-width: 600px) {
+    body {
+      padding: 10px; } }
   body .title {
     font-size: 70px;
     font-weight: bold;
-    width: 540px;
+    width: 100%;
+    max-width: 540px;
+    text-align: center;
     padding: 10px 0;
     border-top: 5px solid black;
     border-bottom: 5px solid black; }
+    @media (max-width: 600px) {
+      body .title {
+        font-size: 50px; } }
+    @media (max-width: 480px) {
+      body .title {
+        font-size: 42px; } }
   body .timeBox {
-    width: 540px;
+    width: 100%;
+    max-width: 540px;
     background-color: white;
     border: 2px solid black;
     margin-top: 10px; }
@@ -57,8 +69,14 @@ body {
     body .timeBox .countryName {
       font-weight: bold;
       font-size: 36px; }
+      @media (max-width: 600px) {
+        body .timeBox .countryName {
+          font-size: 24px; } }
     body .timeBox .countryTime {
       font-weight: bold;
-      font-size: 72px; }
+      font-size: 70px; }
+      @media (max-width: 600px) {
+        body .timeBox .countryTime {
+          font-size: 36px; } }
     body .timeBox .countryDate {
       font-style: italic; }
