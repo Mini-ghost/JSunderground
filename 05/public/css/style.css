@@ -352,6 +352,9 @@ main section#dataBox {
       @media (max-width: 1160px) {
         main section#dataBox ul.allZoonBox li.zoon {
           margin: 5px; } }
+      @media (max-width: 768px) {
+        main section#dataBox ul.allZoonBox li.zoon {
+          min-width: 350px; } }
       main section#dataBox ul.allZoonBox li.zoon .zoonName, main section#dataBox ul.allZoonBox li.zoon .zoonAQI {
         display: -webkit-box;
         display: -ms-flexbox;
