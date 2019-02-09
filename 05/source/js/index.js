@@ -1,9 +1,9 @@
 ;(function(){
   console.time()
   'use strict';
-
+  var googleApp = 'https://script.google.com/macros/s/AKfycbxe3Ba-MiNT5T_mHhW-mf5IixAk2xScNjX74766jThzC3sMAc0/exec?url='
   var rangeApi = 'json/airRange.json'
-  var airApi = 'https://script.google.com/macros/s/AKfycbxe3Ba-MiNT5T_mHhW-mf5IixAk2xScNjX74766jThzC3sMAc0/exec?url=http://opendata2.epa.gov.tw/AQI.json'
+  var airApi = googleApp + 'http://opendata2.epa.gov.tw/AQI.json'
   var pollutionApi = 'json/airPollution.json'
 
   var xhrAirRange = new XMLHttpRequest()
@@ -42,12 +42,14 @@
     var detailBoxData = showData[0]
     if(typeof obj === 'object'){detailBoxData = showData[obj.dataset.index]}
 
+    detailBoxData.AQI = detailBoxData.AQI || '-'
+
     var ulObj = document.createElement('ul')
     var status = detailBoxData.Status
     var statusClass;
       status === '良好'? statusClass = 'good' : status === '普通'? statusClass = 'moderate':
       status === '對敏感族群不健康'? statusClass = 'unhealthyForSensitiveGroups' : status === '對所有族群不健康'? statusClass = 'unhealthy':
-      status === '非常不健康'?  status === 'veryUnhealthy' : status === '危害'?  statusClass = 'hazardous': '';
+      status === '非常不健康'?  status === 'veryUnhealthy' : status === '危害'?  statusClass = 'hazardous': statusClass = 'noneData';
     var zoonObj = document.createElement('li')
     zoonObj.classList.add('zoon')
     zoonObj.innerHTML = '<div class="zoonName">'+detailBoxData.SiteName+'</div><div class="zoonAQI '+ statusClass +'">'+detailBoxData.AQI+'</div>'
@@ -119,6 +121,7 @@
     showData = [];
     function tamplate(index,obj,status){
       var zoonObj = document.createElement('li')
+      obj.AQI = obj.AQI || '-'
       zoonObj.classList.add('zoon')
       zoonObj.dataset.index = index
       zoonObj.innerHTML = '<div class="zoonName">'+obj.SiteName+'</div><div class="zoonAQI '+status+'">'+obj.AQI+'</div>'
@@ -136,7 +139,7 @@
       var statusClass;
       status === '良好'? statusClass = 'good' : status === '普通'? statusClass = 'moderate':
       status === '對敏感族群不健康'? statusClass = 'unhealthyForSensitiveGroups' : status === '對所有族群不健康'? statusClass = 'unhealthy':
-      status === '非常不健康'?  status === 'veryUnhealthy' : status === '危害'?  statusClass = 'hazardous': '';
+      status === '非常不健康'?  status === 'veryUnhealthy' : status === '危害'?  statusClass = 'hazardous': statusClass = 'noneData';
 
       allZoonBox[1].innerHTML += tamplate(k,obj,statusClass);
     }
@@ -168,8 +171,15 @@
   }
   xhrAirApi.send()
 
-  countyBtn.addEventListener('click',function(){
+  countyBtn.addEventListener('click',function(e){
     countySelect.classList.toggle('hide')
-  })
+    e.stopPropagation()
+  }, false)
+  
+  document.body.addEventListener('click', function(){
+    if(!countySelect.classList.contains('hide')){ 
+      countySelect.classList.add('hide') 
+    }
+  }, false)
   console.timeEnd()
 })()

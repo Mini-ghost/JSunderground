@@ -144,6 +144,9 @@ header .infoBox {
           background-color: #9777FF; }
         header .infoBox ul.airRangeBox li .airRangeNum.hazardous {
           background-color: #AD1774; }
+        header .infoBox ul.airRangeBox li .airRangeNum.noneData {
+          background-color: #a0a0a0;
+          color: white; }
       header .infoBox ul.airRangeBox li .airRangeText {
         background-color: white; }
 
@@ -322,6 +325,9 @@ main section#dataBox {
           background-color: #9777FF; }
         main section#dataBox ul.allZoonBox li.zoon .zoonAQI.hazardous {
           background-color: #AD1774; }
+        main section#dataBox ul.allZoonBox li.zoon .zoonAQI.noneData {
+          background-color: #a0a0a0;
+          color: white; }
 
 footer {
   background-color: black;
