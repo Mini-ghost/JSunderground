@@ -223,7 +223,10 @@ main section#dataBox {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
-              flex-direction: column; } }
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; } }
   main section#dataBox .detailBox {
     -ms-flex-preferred-size: 34%;
         flex-basis: 34%; }
@@ -231,13 +234,7 @@ main section#dataBox {
       main section#dataBox .detailBox {
         -ms-flex-preferred-size: 50%;
             flex-basis: 50%; } }
-    @media (max-width: 768px) {
-      main section#dataBox .detailBox {
-        margin: 10px auto; } }
     main section#dataBox .detailBox > ul.allZoonBox {
-      -webkit-box-flex: 0;
-          -ms-flex-positive: 0;
-              flex-grow: 0;
       overflow: hidden;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -371,17 +368,19 @@ main section#dataBox {
         -webkit-box-flex: 1;
             -ms-flex-positive: 1;
                 flex-grow: 1;
-        -ms-flex-negative: 0;
-            flex-shrink: 0; }
+        -ms-flex-negative: 1;
+            flex-shrink: 1; }
       main section#dataBox ul.allZoonBox li.zoon .zoonName {
-        -ms-flex-preferred-size: 190px -6px;
-            flex-basis: 190px -6px;
+        -ms-flex-preferred-size: 54%;
+            flex-basis: 54%;
         font-size: 36px;
         background-color: white;
-        border-right: 3px solid black; }
+        border-right: 3px solid black;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; }
       main section#dataBox ul.allZoonBox li.zoon .zoonAQI {
-        -ms-flex-preferred-size: 160px -6px;
-            flex-basis: 160px -6px;
+        -ms-flex-preferred-size: 46%;
+            flex-basis: 46%;
         font-size: 48px; }
         main section#dataBox ul.allZoonBox li.zoon .zoonAQI.good {
           background-color: #95F084; }
