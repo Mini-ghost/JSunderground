@@ -22,6 +22,7 @@
   var allZoonBox = document.querySelectorAll('.allZoonBox');
   var nowCounty = document.querySelector('.nowCounty')
   var detailType = document.querySelector('.detailType')
+  var updateTime = document.querySelector('.updateTime')
 
   countyBtn.querySelector('.text').innerText = defaultZoon
   nowCounty.innerText = defaultZoon
@@ -53,6 +54,9 @@
     var zoonObj = document.createElement('li')
     zoonObj.classList.add('zoon')
     zoonObj.innerHTML = '<div class="zoonName">'+detailBoxData.SiteName+'</div><div class="zoonAQI '+ statusClass +'">'+detailBoxData.AQI+'</div>'
+
+    updateTime.innerText = detailBoxData.PublishTime + ' 更新'
+
     detailType.innerHTML = ''
 
     for(var p = 0, pl = pollution.length; p < pl; p++){
@@ -143,6 +147,7 @@
 
       allZoonBox[1].innerHTML += tamplate(k,obj,statusClass);
     }
+
     zoonClickHandler()
 
     var allZoon = Array.apply(null,allZoonBox[1].querySelectorAll('li.zoon'))

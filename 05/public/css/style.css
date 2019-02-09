@@ -37,9 +37,19 @@ header .infoBox {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+  @media (max-width: 1160px) {
+    header .infoBox {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
   header .infoBox .titleBox {
     -ms-flex-preferred-size: 350px;
         flex-basis: 350px; }
+    @media (max-width: 1160px) {
+      header .infoBox .titleBox {
+        -ms-flex-preferred-size: auto;
+            flex-basis: auto; } }
     header .infoBox .titleBox h1 {
       margin: 10px 0;
       font-size: 39px;
@@ -111,11 +121,19 @@ header .infoBox {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
+    @media (max-width: 1160px) {
+      header .infoBox ul.airRangeBox {
+        margin-top: 20px; } }
     header .infoBox ul.airRangeBox li {
       text-align: center;
       width: 120px;
       border: 3px solid black;
       margin-right: -3px; }
+      @media (max-width: 768px) {
+        header .infoBox ul.airRangeBox li {
+          -ms-flex-preferred-size: 30%;
+              flex-basis: 30%;
+          margin-top: -3px; } }
       header .infoBox ul.airRangeBox li .airRangeNum, header .infoBox ul.airRangeBox li .airRangeText {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -145,7 +163,7 @@ header .infoBox {
         header .infoBox ul.airRangeBox li .airRangeNum.hazardous {
           background-color: #AD1774; }
         header .infoBox ul.airRangeBox li .airRangeNum.noneData {
-          background-color: #a0a0a0;
+          background-color: #cfcfcf;
           color: white; }
       header .infoBox ul.airRangeBox li .airRangeText {
         background-color: white; }
@@ -200,16 +218,60 @@ main section#dataBox {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start; }
+  @media (max-width: 768px) {
+    main section#dataBox {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
   main section#dataBox .detailBox {
     -ms-flex-preferred-size: 34%;
         flex-basis: 34%; }
+    @media (max-width: 1160px) {
+      main section#dataBox .detailBox {
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%; } }
+    @media (max-width: 768px) {
+      main section#dataBox .detailBox {
+        margin: 10px auto; } }
     main section#dataBox .detailBox > ul.allZoonBox {
-      max-width: 350px;
-      overflow: hidden; }
+      -webkit-box-flex: 0;
+          -ms-flex-positive: 0;
+              flex-grow: 0;
+      overflow: hidden;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; }
+      @media (max-width: 1160px) {
+        main section#dataBox .detailBox > ul.allZoonBox {
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center; } }
+      main section#dataBox .detailBox > ul.allZoonBox li.zoon, main section#dataBox .detailBox > ul.allZoonBox ul.pollutions {
+        -ms-flex-preferred-size: 350px;
+            flex-basis: 350px;
+        -ms-flex-negative: 1;
+            flex-shrink: 1;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; }
       main section#dataBox .detailBox > ul.allZoonBox li.zoon {
         margin: 0;
         margin-top: 12px;
         cursor: default; }
+        @media (max-width: 1160px) {
+          main section#dataBox .detailBox > ul.allZoonBox li.zoon {
+            margin-top: 5px; } }
       main section#dataBox .detailBox > ul.allZoonBox ul.pollutions {
         background-color: white;
         width: 100%;
@@ -258,9 +320,21 @@ main section#dataBox {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
+    @media (max-width: 1160px) {
+      main section#dataBox ul.allZoonBox {
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
     main section#dataBox ul.allZoonBox li.zoon {
       -ms-flex-preferred-size: 350px;
           flex-basis: 350px;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+      -webkit-box-flex: 0;
+          -ms-flex-positive: 0;
+              flex-grow: 0;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -278,6 +352,9 @@ main section#dataBox {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       cursor: pointer; }
+      @media (max-width: 1160px) {
+        main section#dataBox ul.allZoonBox li.zoon {
+          margin: 5px; } }
       main section#dataBox ul.allZoonBox li.zoon .zoonName, main section#dataBox ul.allZoonBox li.zoon .zoonAQI {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -290,28 +367,21 @@ main section#dataBox {
                 align-items: center;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-        height: 100%; }
+        height: 100%;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
+        -ms-flex-negative: 0;
+            flex-shrink: 0; }
       main section#dataBox ul.allZoonBox li.zoon .zoonName {
-        -webkit-box-flex: 0;
-            -ms-flex-positive: 0;
-                flex-grow: 0;
-        -ms-flex-negative: 1;
-            flex-shrink: 1;
-        -ms-flex-preferred-size: 187px;
-            flex-basis: 187px;
+        -ms-flex-preferred-size: 190px -6px;
+            flex-basis: 190px -6px;
         font-size: 36px;
         background-color: white;
-        border-right: 3px solid black;
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box; }
+        border-right: 3px solid black; }
       main section#dataBox ul.allZoonBox li.zoon .zoonAQI {
-        -webkit-box-flex: 0;
-            -ms-flex-positive: 0;
-                flex-grow: 0;
-        -ms-flex-negative: 1;
-            flex-shrink: 1;
-        -ms-flex-preferred-size: 157px;
-            flex-basis: 157px;
+        -ms-flex-preferred-size: 160px -6px;
+            flex-basis: 160px -6px;
         font-size: 48px; }
         main section#dataBox ul.allZoonBox li.zoon .zoonAQI.good {
           background-color: #95F084; }
@@ -326,13 +396,16 @@ main section#dataBox {
         main section#dataBox ul.allZoonBox li.zoon .zoonAQI.hazardous {
           background-color: #AD1774; }
         main section#dataBox ul.allZoonBox li.zoon .zoonAQI.noneData {
-          background-color: #a0a0a0;
+          background-color: #cfcfcf;
           color: white; }
 
 footer {
   background-color: black;
   color: white;
   padding: 10px 0; }
+  @media (max-width: 1160px) {
+    footer {
+      padding: 10px; } }
   footer .content {
     margin: 0 auto;
     display: -webkit-box;

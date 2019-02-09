@@ -6,6 +6,7 @@ $colorVeryUnhealthy: #9777FF
 $colorHazardous: #AD1774
 
 $colorGry: #F0F0F0
+$colorDarkGry: #cfcfcf
 
 
 @mixin size($width, $height: $width)
@@ -54,8 +55,12 @@ header
   .infoBox 
     +flexCenter
     justify-content: space-between
+    @media(max-width: 1160px)
+      flex-direction: column
     .titleBox
       flex-basis: 350px
+      @media(max-width: 1160px)
+        flex-basis: auto
       h1
         margin: 10px 0
         font-size: 39px
@@ -105,11 +110,16 @@ header
         
     ul.airRangeBox
       +flexCenter
+      @media(max-width: 1160px)
+        margin-top: 20px
       li
         text-align: center
         width: 120px
         border: 3px solid black
         margin-right: -3px
+        @media(max-width: 768px)
+          flex-basis: 30%
+          margin-top: -3px
         .airRangeNum, .airRangeText
           +flexCenter
           height: 55px
@@ -129,7 +139,7 @@ header
           &.hazardous
             background-color: $colorHazardous
           &.noneData
-            background-color: $colorGry/1.5
+            background-color: $colorDarkGry
             color: white
         .airRangeText
           background-color: white
@@ -154,15 +164,31 @@ main
   section#dataBox
     +flexCenter
     align-items: flex-start
+    @media(max-width: 768px)
+      flex-direction: column
     .detailBox
       flex-basis: 34%
+      @media(max-width: 1160px)
+        flex-basis: 50%
+      @media(max-width: 768px)
+        margin: 10px auto
       > ul.allZoonBox
-        max-width: 350px
+        flex-grow: 0
         overflow: hidden
+        +flexCenter
+        justify-content: flex-start
+        @media(max-width: 1160px)
+          justify-content: center
+        li.zoon, ul.pollutions
+          flex-basis: 350px
+          flex-shrink: 1
+          box-sizing: border-box
         li.zoon
           margin: 0
           margin-top: 12px
           cursor: default
+          @media(max-width: 1160px)
+            margin-top: 5px
         ul.pollutions
           background-color: white
           width: 100%
@@ -188,29 +214,33 @@ main
       flex-basis: 66%
       +flexCenter
       justify-content: space-between
+      @media(max-width: 1160px)
+        flex-basis: 50%
+        justify-content: center
       li.zoon
         flex-basis: 350px
+        flex-shrink: 1
+        flex-grow: 0
         +flexCenter
         height: 95px
         margin: 12px 0
         border: 3px solid black
         box-sizing: border-box
         cursor: pointer
+        @media(max-width: 1160px)
+          margin: 5px
         .zoonName, .zoonAQI
           +flexCenter
           height: 100%
+          flex-grow: 1
+          flex-shrink: 0
         .zoonName
-          flex-grow: 0
-          flex-shrink: 1
-          flex-basis: 187px
+          flex-basis: 190px -6px
           font-size: 36px
           background-color: white
           border-right: 3px solid black
-          box-sizing: border-box
         .zoonAQI
-          flex-grow: 0
-          flex-shrink: 1
-          flex-basis: 157px
+          flex-basis: 160px -6px
           font-size: 48px
           &.good
             background-color: $colorGood
@@ -225,13 +255,15 @@ main
           &.hazardous
             background-color: $colorHazardous
           &.noneData
-            background-color: $colorGry/1.5
+            background-color: $colorDarkGry
             color: white
 
 footer
   background-color: black
   color: white
   padding: 10px 0
+  @media(max-width: 1160px)
+    padding: 10px
   .content
     margin: 0 auto
     +flexCenter
