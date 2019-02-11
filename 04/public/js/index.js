@@ -4,7 +4,7 @@
   var year, month, date, hour, min
   var countryList = [
     {name: 'NEW YORK', zone: 'America/New_York'},
-    {name: 'LONDONK', zone: 'Europe/London'},
+    {name: 'LONDON', zone: 'Europe/London'},
     {name: 'BANGKOK', zone: 'Asia/Bangkok'},
     {name: 'TAIWAN', zone: 'Asia/Taipei'},
     {name: 'SYDNEY', zone: 'Australia/Sydney'},
@@ -28,7 +28,7 @@
     var thisDate = obj.querySelector('.countryDate')
     var thisTime = obj.querySelector('.countryTime')
 
-    Number(hour) > 17 ? obj.classList.add('pm') : obj.classList.add('am')
+    Number(hour) > 17 || Number(hour) < 6 ? obj.classList.add('pm') : obj.classList.add('am')
     thisName.innerText = countryList[i].name;
     thisDate.innerText = date + ' ' + month + ' ' + year;
     thisTime.innerText = hour + ':' + min;
