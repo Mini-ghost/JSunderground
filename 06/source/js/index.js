@@ -160,12 +160,12 @@
 
 
   var playPage = {
-    url: '/database/playing.html',
+    url: '../database/playing.html',
     res: ''
   }
 
   var endPage = {
-    url: '/database/end.html',
+    url: '../database/end.html',
     res: ''
   }
 
