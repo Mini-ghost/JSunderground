@@ -95,6 +95,7 @@
 
     score.innerText = '000'
     scoreNum = 0
+    ansInput.focus()
 
     ansInput.addEventListener('keyup', function(e){
       var ansNum = this.value = this.value.trim()
@@ -122,11 +123,10 @@
 
       function runScore(){
         endScore.innerText = starNum;
-        if(starNum !== scoreNum){
-          setTimeout(runScore,(scoreNum!==0)? 2000/scoreNum : 0)
-        }
+        if(starNum !== scoreNum){setTimeout(runScore,(scoreNum!==0)? 2000/scoreNum : 0)}
         else{
           againBtn.classList.remove('hidden')
+          againBtn.focus()
         }
         starNum++;
       }
@@ -181,6 +181,7 @@
   var scoreNum = 0
   var s = 60;
 
+  starBtn.focus()
   // event
   starBtn.addEventListener('click', function(){star.classList.add('hidden')})
   starDOM.addEventListener('transitionend', starBtnHandler)
