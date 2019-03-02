@@ -1,0 +1,248 @@
+$colorOrange: #FF9D00
+
+@mixin maxWidth($width)
+  width: 100%
+  max-width: $width
+  margin: 0 auto
+
+@mixin size($width, $height: $width)
+  width: $width
+  height: $height
+  
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+
+@mixin Scrollbar
+  &::-webkit-scrollbar
+    background-color: transparent
+    width: 8px
+  &::-webkit-scrollbar-thumb
+    width: 8px
+    background-color: $colorUnhealthyForSensitiveGroups
+    border-radius: 50px
+  &::-webkit-scrollbar-track
+    background-color: white
+
+@function rem($px: 16px)
+  @return $px/16 + rem
+
+body, h1, h2, h3, h4, h5, h6, p 
+  margin: 0
+  padding: 0
+
+ul
+  padding: 0
+  margin: 0
+  list-style: none
+
+body
+  font-family: 'Roboto Condensed', sans-serif, 微軟正黑體
+  background-color: $colorOrange
+  font-weight: bold
+  user-select: none
+  line-height: 1
+
+section
+  height: 100vh
+  +maxWidth(768px)
+  +flexCenter
+  opacity: 1
+  transition: 0.5s
+  h2
+    display: inline-block
+    font-size: rem(30)
+    color: white
+    border: 4px solid white
+    padding: 8px 16px
+
+#star
+  .titleImg
+    +flexCenter
+    flex-wrap: nowrap
+    @media(max-width: 768px)
+      flex-direction: column
+    .titleNumber
+      font-size: rem(240)
+      color: white
+      text-shadow: 12px 1px 0 black
+    .titleText
+      position: relative
+      font-size: rem(96)
+      margin-left: 24px
+      @media(max-width: 768px)
+        margin-left: 0
+        font-size: rem(72)
+    .titleSymbol
+      position: absolute
+      top: 5px
+      right: 0
+      font-size: rem(44)
+      color: white
+      border-bottom: 20px double white
+      @media(max-width: 768px)
+        font-size: rem(28)
+        border-width: 10px
+    
+  button[name="start"]
+    position: absolute
+    left: 50%
+    bottom: 15vh
+    transform: translateX(-50%)
+    font-size: rem(36)
+    font-weight: 700
+    width: 350px
+    padding-top: 5px
+    background-color: black
+    color: $colorOrange
+    border: none
+    outline: none
+    cursor: pointer
+    transition: 0.3s
+    @media(max-width: 768px)
+      bottom: 0
+      width: 100%
+      &:after
+        display: none
+    &:after
+      content: attr(data-text)
+      position: absolute
+      width: 0
+      top: 100%
+      left: 0
+      margin: 10px 0
+      text-align: center
+      white-space: nowrap
+      font-size: rem(18)
+      font-style: italic
+      font-weight: normal
+      color: white
+      overflow: hidden
+      opacity: 0
+      transition: 0.8s
+    &:hover
+      &:after
+        width: 100%
+        opacity: 1
+    &:active
+      transform: translateX(-50%) scale(0.95)
+
+
+#playing
+  .header, .main
+    +flexCenter
+    justify-content: space-between
+    width: 100%
+  .header
+    @media(max-width: 768px)
+      flex-direction: column-reverse
+    .leftBox
+      .scoreBox
+        font-size: rem(30)
+        +flexCenter
+        justify-content: flex-start
+        .scoreTitle
+          background-color: white
+          color: $colorOrange
+          padding: 8px 16px
+        .scoreNum
+          font-size: rem(42)
+          padding: 0 12px
+          padding-top: 4px
+          @media(max-width: 768px)
+            flex: 1 1 auto
+            text-align: right
+    .rightBox
+      .countdown
+        font-size: rem(96)
+        font-style: italic
+        color: white
+        @media(max-width: 768px)
+          font-size: rem(48)
+          margin-bottom: 30px
+  .main
+    font-size: rem(112)
+    @media(max-width: 768px)
+      flex-direction: column
+    .question
+      flex: 0 0 auto
+      .num1, num2
+      .eq, .ope
+        margin: 0 10px
+      .ope
+        color: white
+      .eq
+        @media(max-width: 768px)
+          display: none
+    .answer
+      flex: 0 1 30%
+      position: relative
+      width: 100%
+      @media(max-width: 768px)
+        max-width: 90%
+        &:after
+          margin-top: 10px
+      input
+        width: 100%
+        font: inherit
+        padding: 15px 20px
+        border: none
+        outline: none
+        box-sizing: border-box
+        text-align: center
+        @media(max-width: 768px)
+          font-size: rem(36)
+      &:after
+        content: attr(data-text)
+        position: absolute
+        top: 100%
+        left: 0
+        width: 100%
+        color: white
+        text-align: center
+        font-size: rem(18)
+        font-style: italic
+
+
+
+#end
+  .content
+    text-align: center
+    p.endText
+      font-size: rem(56)
+      margin: 20px 0
+      @media(max-width: 768px)
+        font-size: rem(28)
+      &:before, &:after
+        content: '—'
+        color: white
+        margin: 0 10px
+    .scoreNum
+      font-size: rem(112)
+      @media(max-width: 768px)
+        font-size: rem(200)
+    button[name="again"]
+      font-size: rem(36)
+      font-weight: 700
+      width: 350px
+      padding-top: 5px
+      background-color: black
+      color: $colorOrange
+      border: none
+      outline: none
+      cursor: pointer
+      transition: all 0.5s ,opacity 0.5s 0.5s
+      margin-top: 50px
+      &:active
+        transform: scale(0.95)
+
+
+.hidden
+  opacity: 0
+
+.none
+  display: none
+
+ 
