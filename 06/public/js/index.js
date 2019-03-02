@@ -122,7 +122,12 @@
 
       function runScore(){
         endScore.innerText = starNum;
-        (starNum !== scoreNum)? setTimeout(runScore,(scoreNum!==0)? 1000/scoreNum : 0) : againBtn.classList.remove('hidden') ;
+        if(starNum !== scoreNum){
+          setTimeout(runScore,(scoreNum!==0)? 2000/scoreNum : 0)
+        }
+        else{
+          againBtn.classList.remove('hidden')
+        }
         starNum++;
       }
 
@@ -157,7 +162,6 @@
 
     })
   }
-
 
   var playPage = {
     url: 'database/playing.html',

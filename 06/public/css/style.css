@@ -278,6 +278,7 @@ section {
     font-size: 2.25rem;
     font-weight: 700;
     width: 350px;
+    height: 100%;
     padding-top: 5px;
     background-color: black;
     color: #FF9D00;
@@ -287,11 +288,14 @@ section {
     -webkit-transition: all 0.5s ,opacity 0.5s 0.5s;
     -o-transition: all 0.5s ,opacity 0.5s 0.5s;
     transition: all 0.5s ,opacity 0.5s 0.5s;
-    margin-top: 50px; }
+    margin-top: 50px;
+    overflow: hidden; }
     #end .content button[name="again"]:active {
       -webkit-transform: scale(0.95);
           -ms-transform: scale(0.95);
               transform: scale(0.95); }
+    #end .content button[name="again"].hidden {
+      visibility: hidden; }
 
 .hidden {
   opacity: 0; }

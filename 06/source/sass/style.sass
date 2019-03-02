@@ -227,6 +227,7 @@ section
       font-size: rem(36)
       font-weight: 700
       width: 350px
+      height: 100%
       padding-top: 5px
       background-color: black
       color: $colorOrange
@@ -235,8 +236,11 @@ section
       cursor: pointer
       transition: all 0.5s ,opacity 0.5s 0.5s
       margin-top: 50px
+      overflow: hidden
       &:active
         transform: scale(0.95)
+      &.hidden
+        visibility: hidden
 
 
 .hidden
