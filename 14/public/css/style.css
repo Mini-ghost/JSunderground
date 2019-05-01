@@ -73,10 +73,10 @@ ul {
   -webkit-transition: height 0.5s;
   -o-transition: height 0.5s;
   transition: height 0.5s;
-  background-image: -webkit-gradient(linear, left top, right top, from(black), to(rgba(0, 0, 0, 0.2))), url(image/banner.jpg);
-  background-image: -webkit-linear-gradient(left, black, rgba(0, 0, 0, 0.2)), url(image/banner.jpg);
-  background-image: -o-linear-gradient(left, black, rgba(0, 0, 0, 0.2)), url(image/banner.jpg);
-  background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0.2)), url(image/banner.jpg); }
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(rgba(0, 0, 0, 0.2))), url(../image/banner.jpg);
+  background-image: -webkit-linear-gradient(left, black, rgba(0, 0, 0, 0.2)), url(../image/banner.jpg);
+  background-image: -o-linear-gradient(left, black, rgba(0, 0, 0, 0.2)), url(../image/banner.jpg);
+  background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0.2)), url(../image/banner.jpg); }
   .cover.cover--active {
     height: 100vh; }
   .cover > .container {
