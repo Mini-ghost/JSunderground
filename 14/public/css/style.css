@@ -72,7 +72,8 @@ ul {
   align-items: center;
   -webkit-transition: height 0.5s;
   -o-transition: height 0.5s;
-  transition: height 0.5s; }
+  transition: height 0.5s;
+  background-image: url(); }
   .cover.cover--active {
     height: 100vh; }
   .cover > .container {
