@@ -27,7 +27,6 @@
 
     function fadeOut(el, sec, callBack) {
         el.style.opacity = 1;
-        console.log(sec)
         sec = sec || 400
         var last = +new Date();
         var tick = function () {
