@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>14F - 神明求籤｜JavaScrip 新手地下城</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:400,900&amp;amp;subset=chinese-traditional"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,900&amp;amp;subset=chinese-traditional"/>
+  </head>
+  <body>
+    <main>
+      <section class="cover" style="background-image: -webkit-gradient(linear, left top, right top, from(black), to(rgba(0, 0, 0, 0.2)))
+									background-image: -webkit-linear-gradient(left, black, rgba(0, 0, 0, 0.2)), url(image/banner.jpg);
+									background-image: -o-linear-gradient(left, black, rgba(0, 0, 0, 0.2)), url(image/banner.jpg);
+									background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0.2)), url(image/banner.jpg);">
+        <div class="container container__step1 active">
+          <h1 class="title title__abs title--h120 title--lr">線上求籤。</h1>
+          <section class="step">
+            <h2 class="step__title title title--h24">求籤步驟</h2>
+            <ul class="step__list">
+              <li class="step__item">① 請虔誠地在心中默念您的姓名、出生年月日、住址</li>
+              <li class="step__item">② 選擇欲請教的求籤類別後，誠心地在心中詳細說明</li>
+              <li class="step__item">③ 說明完後即可點選「開始求籤」按鈕進行線上求籤</li>
+            </ul>
+          </section>
+          <section class="select">
+            <h2 class="select__title title title--h24">求籤類別</h2>
+            <div class="select__list">
+              <input class="select__input" id="class1" type="radio" name="class"/>
+              <label class="select__label" for="class1">網站上線</label>
+              <input class="select__input" id="class2" type="radio" name="class"/>
+              <label class="select__label" for="class2">感情姻緣</label>
+              <input class="select__input" id="class3" type="radio" name="class"/>
+              <label class="select__label" for="class3">事業工作</label>
+              <input class="select__input" id="class4" type="radio" name="class"/>
+              <label class="select__label" for="class4">家庭生活</label>
+              <input class="select__input" id="class5" type="radio" name="class"/>
+              <label class="select__label" for="class5">求財運勢</label>
+              <input class="select__input" id="class6" type="radio" name="class"/>
+              <label class="select__label" for="class6">參選總統</label>
+            </div>
+          </section>
+        </div>
+        <div class="container container__step2">
+          <div class="bg">
+            <div class="bg__text bg__text--top bg__text--left">線</div>
+            <div class="bg__text bg__text--top bg__text--right">上</div>
+            <div class="bg__text bg__text--bottom bg__text--right">求</div>
+            <div class="bg__text bg__text--bottom bg__text--left">籤</div>
+            <div class="bg__line bg__line--top"></div>
+            <div class="bg__line bg__line--right"></div>
+            <div class="bg__line bg__line--bottom"></div>
+            <div class="bg__line bg__line--left"></div>
+          </div>
+          <div class="content">
+            <div class="sign" style="display: none">
+              <div class="title title--h24 sign__index"> </div>
+              <div class="title title--h240 sign__type"> </div>
+              <div class="title title--h24 title sign__chineseIndex"> </div>
+            </div>
+            <div class="detail" style="display: none">
+              <div class="detail__article">
+                <div class="detail__header"></div>
+                <div class="detail__content"></div>
+              </div>
+              <div class="detail__more">
+                <div class="detail__explanation">
+                  <div class="title title--h24 detail__title">聖意</div>
+                  <div class="detail__text"></div>
+                </div>
+                <div class="detail__description">
+                  <div class="title title--h24 detail__title">解曰</div>
+                  <div class="detail__text"></div>
+                </div>
+                <button class="button button--white" name="reset">重新求籤</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="end">
+        <div class="container">
+          <button class="button button__star button--black" name="star">開始求籤</button>
+        </div>
+      </section>
+    </main>
+    <script src="js/index.js"></script>
+  </body>
+</html>

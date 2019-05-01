@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+html(lang="zh-TW")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title 14F - 神明求籤｜JavaScrip 新手地下城
+
+		link(rel="stylesheet", href="css/style.css")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:400,900&amp;subset=chinese-traditional")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,900&amp;subset=chinese-traditional")
+	
+	body
+		main
+			section.cover(style=   `background-image: -webkit-gradient(linear, left top, right top, from(black), to(rgba(0, 0, 0, 0.2)))
+									background-image: -webkit-linear-gradient(left, black, rgba(0, 0, 0, 0.2)), url(image/banner.jpg);
+									background-image: -o-linear-gradient(left, black, rgba(0, 0, 0, 0.2)), url(image/banner.jpg);
+									background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0.2)), url(image/banner.jpg);`)
+				.container.container__step1.active
+					h1.title.title__abs.title--h120.title--lr 線上求籤。
+					section.step
+						h2.step__title.title.title--h24 求籤步驟
+						ul.step__list
+							li.step__item ① 請虔誠地在心中默念您的姓名、出生年月日、住址
+							li.step__item ② 選擇欲請教的求籤類別後，誠心地在心中詳細說明
+							li.step__item ③ 說明完後即可點選「開始求籤」按鈕進行線上求籤
+					section.select
+						h2.select__title.title.title--h24 求籤類別
+						.select__list
+							input.select__input#class1(type="radio" name="class")
+							label.select__label(for="class1") 網站上線
+							input.select__input#class2(type="radio" name="class")
+							label.select__label(for="class2") 感情姻緣
+							input.select__input#class3(type="radio" name="class")
+							label.select__label(for="class3") 事業工作
+							input.select__input#class4(type="radio" name="class")
+							label.select__label(for="class4") 家庭生活
+							input.select__input#class5(type="radio" name="class")
+							label.select__label(for="class5") 求財運勢
+							input.select__input#class6(type="radio" name="class")
+							label.select__label(for="class6") 參選總統
+				.container.container__step2
+					.bg
+						.bg__text.bg__text--top.bg__text--left 線
+						.bg__text.bg__text--top.bg__text--right 上
+						.bg__text.bg__text--bottom.bg__text--right 求
+						.bg__text.bg__text--bottom.bg__text--left 籤
+						.bg__line.bg__line--top
+						.bg__line.bg__line--right
+						.bg__line.bg__line--bottom
+						.bg__line.bg__line--left
+					.content
+						.sign(style="display: none")
+							.title.title--h24.sign__index 
+							.title.title--h240.sign__type 
+							.title.title--h24.title.sign__chineseIndex 
+						.detail(style="display: none")
+							.detail__article
+								.detail__header
+								.detail__content
+							.detail__more
+								.detail__explanation
+									.title.title--h24.detail__title 聖意
+									.detail__text
+								.detail__description
+									.title.title--h24.detail__title 解曰
+									.detail__text
+								button(name='reset').button.button--white 重新求籤
+			section.end
+				.container
+					button(name='star').button.button__star.button--black 開始求籤
+
+		script(src="js/index.js")
